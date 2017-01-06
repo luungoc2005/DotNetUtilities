@@ -224,5 +224,24 @@ namespace DataHelper
             return GetDataArray(input, typeof(Attributes.Label));
         }
 
+        /// <summary>
+        /// Count of properties with the "Feature" attribute
+        /// </summary>
+        /// <param name="input">Input type</param>
+        /// <returns></returns>
+        public static int GetFeaturesCount(Type input)
+        {
+            return GetFeatures(input).Length;
+        }
+
+        /// <summary>
+        /// Count of properties with the "Label" attribute
+        /// </summary>
+        /// <param name="input">Input type</param>
+        /// <returns></returns>
+        public static int GetLabelsCount(Type input)
+        {
+            return GetLabels(input).Length;
+        }
     }
 }
