@@ -87,19 +87,19 @@ namespace DotNetUtils
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="startD"></param>
-        /// <param name="endD"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
         /// <returns></returns>
         public static double GetBusinessDays(DateTime startDate, DateTime endDate)
         {
-            double calcBusinessDays =
-                1 + ((endD - startD).TotalDays * 5 -
-                (startD.DayOfWeek - endD.DayOfWeek) * 2) / 7;
+            double businessDays =
+                1 + ((endDate - startDate).TotalDays * 5 -
+                (startDate.DayOfWeek - endDate.DayOfWeek) * 2) / 7;
 
-            if (endD.DayOfWeek == DayOfWeek.Saturday) calcBusinessDays--;
-            if (startD.DayOfWeek == DayOfWeek.Sunday) calcBusinessDays--;
+            if (endDate.DayOfWeek == DayOfWeek.Saturday) businessDays--;
+            if (startDate.DayOfWeek == DayOfWeek.Sunday) businessDays--;
 
-            return calcBusinessDays;
+            return businessDays;
         }
     }
 }
