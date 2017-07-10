@@ -48,12 +48,12 @@ namespace DotNetUtils
         /// <param name="value">The date to add</param>
         /// <param name="days">Number of days to add. Must be positive</param>
         /// <returns></returns>
-        public static DateTime GetNextDay(DateTime value, int days)
+        public static DateTime AddBusinessDays(DateTime value, int days)
         {
             DateTime retVal = value;
             if (days < 0)
             {
-                throw new ArgumentException("Can only add a positive number of days")
+                throw new ArgumentException("Can only add a positive number of days");
             }
             else if (days == 0)
             {
