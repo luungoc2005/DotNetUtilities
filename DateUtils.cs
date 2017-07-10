@@ -63,16 +63,16 @@ namespace DotNetUtils
             {
                 if (retVal.DayOfWeek == DayOfWeek.Saturday)
                 {
-                    retVal.AddDays(2); // Move forward to Monday
+                    retVal = retVal.AddDays(2); // Move forward to Monday
                     days -= 1;
                 }
                 else if (retVal.DayOfWeek == DayOfWeek.Sunday)
                 {
-                    retVal.AddDays(1); // Move forward to Monday
+                    retVal = retVal.AddDays(1); // Move forward to Monday
                     days -= 1;
                 }
 
-                retVal.AddDays(days / 5 * 7);
+                retVal = retVal.AddDays(days / 5 * 7);
                 int extraDays = days % 5;
 
                 if ((int)retVal.DayOfWeek + extraDays > 5)
